@@ -5,13 +5,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IContinentDal
+    public interface IContinentDal: IEntityRepository<Continent>
     {
-        List<Continent> GetAll();
-
-        void Add(Continent continent);
-        void Delete(Continent continent);
-        void Update(Continent continent);
-        Continent GetById(int Id);
+        
     }
 }

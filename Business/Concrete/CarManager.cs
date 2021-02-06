@@ -18,7 +18,7 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            throw new NotImplementedException();
+            _icarDal.Add(car);
         }
 
         public void Delete(Car car)
@@ -39,6 +39,16 @@ namespace Business.Concrete
         public Car GetById(int Id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Car> GetCarsByBrandId(int brandId)
+        {
+            return _icarDal.GetCarsByBrandId(brandId);
+        }
+
+        public List<Car> GetCarsByColorId(int colorId)
+        {
+            return _icarDal.GetCarsByColorId(colorId);
         }
 
         public void Update(Car car)

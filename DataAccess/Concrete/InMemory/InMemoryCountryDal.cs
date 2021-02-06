@@ -2,23 +2,29 @@
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
     public class InMemoryCountryDal : ICountryDal
     {
-        public void Add(Country country)
+        public void Add(Country entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Country country)
+        public void Delete(Country entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<Country> GetAll()
+        public Country Get(Expression<Func<Country, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Country> GetAll(Expression<Func<Country, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
@@ -28,12 +34,7 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public Country GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Country country)
+        public void Update(Country entity)
         {
             throw new NotImplementedException();
         }

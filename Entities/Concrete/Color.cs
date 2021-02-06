@@ -8,7 +8,6 @@ namespace Entities.Concrete
     public class Color: BaseClass
     {
         public string Name { get; set; }
-        public string HexadecimalCode { get; set; }
-        public decimal PriceDifference { get; set; }
+        public string Code { get; set; }
     }
 }

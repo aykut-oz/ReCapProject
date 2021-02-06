@@ -8,6 +8,7 @@ namespace Entities.Concrete
     public class Car: BaseClass
     {
         public string Name { get; set; }
+        public string Code { get; set; }
         public int BrandId { get; set; }
         public int ColorId { get; set; }
         public int ModelYear { get; set; }

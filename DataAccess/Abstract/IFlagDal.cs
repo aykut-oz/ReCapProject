@@ -5,14 +5,9 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IFlagDal
+    public interface IFlagDal: IEntityRepository<Flag>
     {
-        List<Flag> GetAll();
-
-        void Add(Flag flag);
-        void Delete(Flag flag);
-        void Update(Flag flag);
-        Flag GetById(int Id);
+       
 
     }
 }

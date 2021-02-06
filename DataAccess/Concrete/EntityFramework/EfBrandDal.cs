@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concrete.InMemory
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class InMemoryBrandDal : IBrandDal
+    public class EfBrandDal : IBrandDal
     {
         public void Add(Brand entity)
         {

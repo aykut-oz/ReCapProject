@@ -9,6 +9,7 @@ namespace Entities.Concrete
     {
         public string Name { get; set; }
         public string LogoUrl { get; set; }
+        public string Code { get; set; }
         public int CountryId { get; set; }
     }
 }

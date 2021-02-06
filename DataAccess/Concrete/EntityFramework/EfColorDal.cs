@@ -5,36 +5,31 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concrete.InMemory
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class InMemoryBrandDal : IBrandDal
+    public class EfColorDal : IColorDal
     {
-        public void Add(Brand entity)
+        public void Add(Color entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Brand entity)
+        public void Delete(Color entity)
         {
             throw new NotImplementedException();
         }
 
-        public Brand Get(Expression<Func<Brand, bool>> filter)
+        public Color Get(Expression<Func<Color, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter = null)
+        public List<Color> GetAll(Expression<Func<Color, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Brand> GetByCountryId(int countryId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Brand entity)
+        public void Update(Color entity)
         {
             throw new NotImplementedException();
         }
