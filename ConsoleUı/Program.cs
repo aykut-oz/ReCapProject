@@ -10,7 +10,19 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            // CarTest();
+            CarManager carManager = new CarManager(new EfCarDal());
+            foreach (var item in carManager.GetAll())
+            {
+                Console.WriteLine(item.Name);
+                    
+            }
 
+
+        }
+
+        private static void CarTest()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
 
             var a = carManager.GetAll();
@@ -46,15 +58,11 @@ namespace ConsoleUI
                 ModifiedDate = DateTime.Now,
                 Name = "test"
             };
-            if (cars.Name.Length>2&&cars.DailyPrice>0)
+            if (cars.Name.Length > 2 && cars.DailyPrice > 0)
             {
                 carManager.Add(cars);
                 Console.WriteLine("Added");
             }
-           
-           
-
-
 
         }
     }
