@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 
@@ -16,42 +19,33 @@ namespace Business.Concrete
             _icarDal = icarDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            _icarDal.Add(car);
+            if (car.Name.Length < 2)
+            {
+               
+                return new ErrorResult(Messages.CarNameInvalid);
+            }
+            _icarDal.Add(car);  
+            return new SuccessResult(Messages.CarAdded);
         }
 
-        public void Delete(Car car)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Car> GetAll()
-        {
-           return _icarDal.GetAll();
-        }
-
-        public List<Car> GetByBrandOrColorId(int brandId, int? colorId)
+        public IDataResult<List<Car>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Car GetById(int Id)
+        public IDataResult<List<Car>> GetAllByColorId(int id)
         {
-            return _icarDal.Get(x=>x.Id==Id);
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
+        public IDataResult<Car> GetById(int carId)
         {
-            return _icarDal.GetCarsByBrandId(brandId);
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetCarsByColorId(int colorId)
-        {
-            return _icarDal.GetCarsByColorId(colorId);
-        }
-
-        public void Update(Car car)
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
             throw new NotImplementedException();
         }
