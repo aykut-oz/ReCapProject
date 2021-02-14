@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
+using Core.Utilities.Results.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -30,24 +31,41 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarAdded);
         }
 
+        public IResult Delete(Car car)
+        {
+            _icarDal.Delete(car);
+            return new SuccessResult(Messages.CarDeleted);
+        }
+
         public IDataResult<List<Car>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Car>>(_icarDal.GetAll());
         }
 
         public IDataResult<List<Car>> GetAllByColorId(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Car>>(_icarDal.GetAll(x => x.ColorId == id));
         }
 
         public IDataResult<Car> GetById(int carId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Car>(_icarDal.Get(p => p.Id == carId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CarDetailDto>>(_icarDal.GetCarDetails());
+        }
+
+        public IDataResult<List<CarDetailDto>> GetCarsByBrandId(int id)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_icarDal.GetCarsByBrandId(id));
+        }
+
+        public IResult Update(Car car)
+        {
+            _icarDal.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
         }
     }
 }

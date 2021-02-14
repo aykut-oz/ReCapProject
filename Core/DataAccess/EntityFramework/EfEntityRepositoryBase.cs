@@ -57,20 +57,6 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        //public List<TEntity> GetCarsByBrandId(int brandId)
-        //{
-        //    using (TContext context = new TContext())
-        //    {
-        //        return context.Set<TEntity>().Where(x => x.BrandId == brandId).ToList();
-        //    }
-        //}
-
-        //public List<TEntity> GetCarsByColorId(int colorId)
-        //{
-        //    using (TContext context = new TContext())
-        //    {
-        //        return context.Set<TEntity>().Where(x => x.ColorId == colorId).ToList();
-        //    }
-        //}
+        
     }
 }
