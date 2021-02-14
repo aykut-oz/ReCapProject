@@ -6,48 +6,45 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsController : ControllerBase
+    public class CustomersController : ControllerBase
     {
-        ICarService _carService;
-
-        public CarsController(ICarService carService)
+        ICustomerService _customerService;
+        public CustomersController(ICustomerService customerService)
         {
-            _carService = carService;
+            _customerService = customerService;
         }
-
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _carService.GetAll();
+            var result = _customerService.GetAll();
             if (result.Success) { return Ok(result); }
             return BadRequest();
         }
-
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _carService.GetById(id);
+            var result = _customerService.GetById(id);
             if (result.Success) { return Ok(result); }
             return BadRequest();
         }
         [HttpPost("add")]
-        public IActionResult Add(Car car)
+        public IActionResult Add(Customer customer)
         {
-            var result = _carService.Add(car);
+            var result = _customerService.Add(customer);
             if (result.Success) { return Ok(result); }
             return BadRequest();
         }
         [HttpPost("delete")]
-        public IActionResult Delete(Car car)
+        public IActionResult Delete(Customer customer)
         {
-            var result = _carService.Delete(car);
+            var result = _customerService.Delete(customer);
             if (result.Success) { return Ok(result); }
             return BadRequest();
         }
         [HttpPost("update")]
-        public IActionResult Update(Car car)
+        public IActionResult Update(Customer customer)
         {
-            var result = _carService.Update(car);
+            var result = _customerService.Update(customer);
             if (result.Success) { return Ok(result); }
             return BadRequest();
         }

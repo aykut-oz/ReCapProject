@@ -10,20 +10,21 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            // CarTest();
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.GetCarDetails();
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            UserManager userManager = new UserManager(new EfUserDal());
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
-            if (result.Success)
-            {
-                Console.WriteLine(result.Data);
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+            carManager.Add(new Car() { BrandId = 1, Code="1-t", Name="Opel", ColorId=1, CreatedDate=DateTime.Now, DailyPrice=200, Description="Araç Arızası Giderildi", IsActive=true, ModelYear=2021 });
 
+            Console.WriteLine("-- CARS --");
+            foreach (var car in carManager.GetAll().Data)
+                Console.WriteLine("{0} - {1} ", car.Id, car.Description);
 
+            Console.WriteLine("-- BRANDS --");
+            foreach (var brand in brandManager.GetAll().Data)
+                Console.WriteLine("{0} - {1} ", brand.Id, brand.Name);
 
         }
 

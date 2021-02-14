@@ -28,7 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
+        public List<CarDetailDto> GetCarsByBrandId(int brandId)
         {
             throw new NotImplementedException();
         }

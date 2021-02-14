@@ -35,10 +35,7 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public List<Car> GetCarsByColorId(int colorId)
         {
@@ -46,6 +43,11 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public void Update(Car entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarsByBrandId(int brandId)
         {
             throw new NotImplementedException();
         }
