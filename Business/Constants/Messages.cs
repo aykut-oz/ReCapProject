@@ -55,5 +55,7 @@ namespace Business.Constants
         public static string CarImageListed = "Araçlar Resimleri listelendi";
         public static string CarImageNameInvalid = "Araç Resim ismi geçersiz";
 
+        public static string AuthorizationDenied = "AuthorizationDenied";
+
     }
 }
