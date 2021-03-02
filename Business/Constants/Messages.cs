@@ -47,5 +47,13 @@ namespace Business.Constants
         public static string UserAdded = "Kullanıcı kayıt işlemi başarılı";
         public static string UserUpdated = "Kullanıcı güncelleme işlemi başarılı";
         public static string UserDeleted = "Kullanıcı silme işlemi başarılı";
+
+        //CarImagesMessages
+        public static string CarImageAdded = "Araç Resmi kayıt işlemi başarılı";
+        public static string CarImageDeleted = "Araç Resmi silme işlemi başarılı";
+        public static string CarImageUpdated = "Araç Resmi güncelleme işlemi başarılı";
+        public static string CarImageListed = "Araçlar Resimleri listelendi";
+        public static string CarImageNameInvalid = "Araç Resim ismi geçersiz";
+
     }
 }
